@@ -9,12 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
+    "knex": "^1.0.5",
+    "moment": "^2.29.2",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-bootstrap": "^2.2.3",
+    "react-dom": "18.0.0",
+    "react-modal": "^3.14.4",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^18.0.0",
     "eslint": "8.12.0",
-    "eslint-config-next": "12.1.4"
+    "eslint-config-next": "12.1.4",
+    "typescript": "^4.6.3"
   }
 }
