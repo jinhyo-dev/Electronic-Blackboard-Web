@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+.foodTable {
+  margin-top: 10rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.cardBox{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+}
+.breakfast{
+  width: 25%;
+  margin: 20px;
+  background-color: #ff9500;
+  border-radius: 7px;
+  transition: margin 0.2s;
+}
+
+.lunch{
+  width: 25%;
+  margin: 20px;
+  background-color: #00bf60;
+  border-radius: 7px;
+  transition: margin 0.2s;
+}
+
+.dinner{
+  width: 25%;
+  margin: 20px;
+  background-color: #5e3dff;
+  border-radius: 7px;
+  transition: margin 0.2s;
+}
+
+.lunch:hover,
+.breakfast:hover,
+.dinner:hover {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.menu {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 4rem;
+  font-family: 'Sunflower', sans-serif;
+}
+
+.foodTime {
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+  font-family: 'Black Han Sans', sans-serif;
+}
+
+.dateOfFood {
+  font-size: 2.5rem;
+  color: #c4fd68;
+  font-weight: bold;
+}
+
+#lable {
+  color: #ff178b;
+}

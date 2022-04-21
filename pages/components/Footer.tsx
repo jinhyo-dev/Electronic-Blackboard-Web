@@ -4,7 +4,7 @@ import { FiBell } from 'react-icons/fi'
 import { BiHome } from "react-icons/bi";
 import { useRouter } from "next/router";
 
-const footer = () => {
+const Footer = () => {
   const router = useRouter()
 
   const home = () => {
@@ -16,7 +16,7 @@ const footer = () => {
   }
 
   const notice = () => {
-    router.push('/notice');
+    router.push('/Notice');
   }
 
   return (
@@ -30,4 +30,4 @@ const footer = () => {
     </div>
   )
 }
-export default footer
+export default Footer

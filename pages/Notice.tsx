@@ -3,7 +3,7 @@ import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import Footer from './components/Footer'
 
-export default function index() {
+export default function Notice() {
   const { data, error } = useSWR('../api/DB', fetcher)
 
   if (error) {
@@ -19,7 +19,7 @@ export default function index() {
   else {
     console.log(data)
     return (
-      <div>
+      <div key={1}>
         <Footer />
         <table>
           <thead>
@@ -29,7 +29,7 @@ export default function index() {
           </thead>
           {Object.values(data.notice).map((log: any) => (
             <tbody>
-              <tr key={1}>
+              <tr>
                 <td>{log.Date}</td>
                 <td>{log.Category}</td>
                 <td>{log.Contents}</td>
