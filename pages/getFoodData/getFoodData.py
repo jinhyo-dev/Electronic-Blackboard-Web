@@ -2,8 +2,10 @@ import schedule
 import time
 import requests
 import json
+import re
 
 def getFood():
+  pattern = r'\([^)]*\)'
   todayMeal = {"breakfast": "", "lunch": "", "dinner": ""}
   html = requests.get('https://meal.jinhyodev.com/경북소')
     
@@ -35,8 +37,11 @@ def getFood():
         tmp = tmp.replace('s', '')
         tmp = tmp.replace('a', '')
         tmp = tmp.replace('!', '')
+        tmp = tmp.replace('(', '')
+        tmp = tmp.replace(')', '')
+        tmp = re.sub(pattern=pattern, repl='', string=tmp)
         arr.append(tmp)
-            
+    print(arr)           
     todayMeal[meal] = arr
   with open("./foodData.json", "w", encoding='utf-8') as f:
       json.dump(todayMeal, f, indent="\t", ensure_ascii = False)

@@ -7,27 +7,36 @@ export default function food() {
   const lunch = []
   const dinner = []
 
+  if (foodData['breakfast'].length == 0) 
+    breakfast.push('No breakfast today')
+
   for (let i = 0; i < foodData['breakfast'].length; i++) {
     if (i == foodData['breakfast'].length - 1) {
       breakfast.push(foodData['breakfast'][i])    
     } else {
-      breakfast.push(foodData['breakfast'][i], " / ")
+      breakfast.push(foodData['breakfast'][i], "| ")
     }
   }
+
+  if (foodData['lunch'].length == 0) 
+    lunch.push("No lunch today")
 
   for (let i = 0; i < foodData['lunch'].length; i++) {
     if (i == foodData['lunch'].length - 1) {
       lunch.push(foodData['lunch'][i])    
     } else {
-      lunch.push(foodData['lunch'][i], " / ")
+      lunch.push(foodData['lunch'][i], " | ")
     }
   }
 
+  if (foodData['dinner'].length == 0) 
+    dinner.push("No dinner today")
+    
   for (let i = 0; i < foodData['dinner'].length; i++) {
     if (i == foodData['dinner'].length - 1) {
       dinner.push(foodData['dinner'][i])    
     } else {
-      dinner.push(foodData['dinner'][i], " / ")
+      dinner.push(foodData['dinner'][i], " | ")
     }
   }
 
