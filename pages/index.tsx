@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Footer from './components/Footer'
 
 export default function index() {
-  const [timer, setTimer] = useState('00:00 (load)')
+  const [timer, setTimer] = useState('00:00 (load)');
                     
   const currentTimer = () => {
     const date = new Date()
