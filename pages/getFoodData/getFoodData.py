@@ -7,7 +7,7 @@ import re
 def getFood():
   pattern = r'\([^)]*\)'
   todayMeal = {"breakfast": "", "lunch": "", "dinner": ""}
-  html = requests.get('https://meal.jinhyodev.com/경북소')
+  html = requests.get('http://158.247.211.247:3503/경북소프트')
     
   for mealtime in range(3):
     arr = []
