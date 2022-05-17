@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.8.0",
     "jquery": "^3.6.0",
     "knex": "^1.0.5",
     "moment": "^2.29.2",
