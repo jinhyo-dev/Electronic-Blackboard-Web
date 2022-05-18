@@ -2,7 +2,7 @@ import React from 'react'
 import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import Footer from './components/Footer'
-import ShowModal from './components/showModal'
+import ShowModal from './components/ShowModal'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
