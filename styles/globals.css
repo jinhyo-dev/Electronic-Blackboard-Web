@@ -14,3 +14,65 @@
 body {
   background-color: #34373c;
 }
+
+.box {
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #101010;
+  text-align: center;
+  border:  1px solid #101010;
+  border-radius: 20px;
+}
+
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 5rem;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.box input[type = "text"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 1px auto;
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type = "text"]:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.registerButton {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.registerButton:hover {
+  background: #2ecc71;
+}
