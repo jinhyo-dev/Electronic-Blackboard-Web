@@ -21,10 +21,12 @@
       border-radius: 50%;
   }
 }
-
+.space-100px{
+  height: 100px;
+}
 .img-animation {
   width: 100%;
-  height: 100px;
+  height: 140px;
   top: 0;
   left: 0;
   margin: 0;

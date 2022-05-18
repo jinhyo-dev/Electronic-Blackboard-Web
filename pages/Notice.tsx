@@ -36,7 +36,7 @@ export default function Notice() {
           
           <Card className='cards' sx={{ maxWidth: 500, borderRadius: '7px'}}>
             <CardActionArea>
-              <UsedImg value={log.Img} />
+              <UsedImg value={log.Image} />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {log.Category}
@@ -54,6 +54,7 @@ export default function Notice() {
             </CardActions>
           </Card>
         ))}
+        <div className='space-100px'/>
       </div>
     )
   }
@@ -70,16 +71,24 @@ function UsedLink({ value }: { value: string }){
     )
   }
 }
-function UsedImg(props){
+function UsedImg({ value }: { value: string }){
   // console.log(props)
-  if(props===undefined){
+  let heightSet="160"
+  if(value){
     // 데이터에 이미지가 있으면 출력되게 
     return(
-      <CardMedia
-        component="img"
-        height="160"
-        image="/static/images/cards/contemplative-reptile.jpg"
-      />
+      <div
+        onMouseEnter={() =>  heightSet="auto"}
+        onMouseLeave={() =>  heightSet="160"}
+        //감지를 못함 이거 해결해야함
+      >
+        <CardMedia
+          component="img"
+          height={heightSet}
+          src={value}
+        />
+        
+      </div>
     )
   }
   else{
