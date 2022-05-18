@@ -3,7 +3,7 @@ import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import Footer from './components/Footer'
 import ShowModal from './components/ShowModal'
-
+import ReactLoading from 'react-loading'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -20,7 +20,12 @@ export default function Notice() {
   }
 
   if (!data) {
-    return <div>loading...</div>
+    return (
+      <div>
+        <ReactLoading type={'bars'} width={'10%'} className='loadingBar' /> <br/>
+        <div className='loadingMessage'>Loading ...</div>
+      </div>
+    )
   } 
   else {
     console.log(data)
@@ -46,10 +51,8 @@ export default function Notice() {
             </CardActionArea>
             <CardActions className='link-Buttion-Position'>
               <UsedLink value={log.Link}/>
-              {/* Img 랑 Link 추가 */}
             </CardActions>
           </Card>
-
         ))}
       </div>
     )
@@ -57,9 +60,7 @@ export default function Notice() {
 }
 function UsedLink({ value }: { value: string }){
   if(!value){
-    return(
-        null
-    )
+    return null
   }
   else{
     return(

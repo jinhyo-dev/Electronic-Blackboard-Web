@@ -7,7 +7,7 @@ import re
 def getFood():
   pattern = r'\([^)]*\)'
   todayMeal = {"breakfast": "", "lunch": "", "dinner": ""}
-  html = requests.get('http://158.247.211.247:3503/경북소프트')
+  html = requests.get('http://158.247.211.247:3503/경북소프트웨어고등학교')
     
   for mealtime in range(3):
     arr = []
@@ -39,12 +39,15 @@ def getFood():
         tmp = tmp.replace('!', '')
         tmp = tmp.replace('(', '')
         tmp = tmp.replace(')', '')
+        tmp = tmp.replace(' ', '')
         tmp = re.sub(pattern=pattern, repl='', string=tmp)
         arr.append(tmp)
     print(arr)           
     todayMeal[meal] = arr
   with open("./foodData.json", "w", encoding='utf-8') as f:
       json.dump(todayMeal, f, indent="\t", ensure_ascii = False)
+
+getFood()
 
 schedule.every().day.at("00:00").do(getFood)
 

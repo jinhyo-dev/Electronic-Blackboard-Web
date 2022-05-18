@@ -43,8 +43,9 @@ export default function ShowModal({ value }: Props) {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              {value}
+            <Typography id="transition-modal-title" variant="h6" component="h2" style={{ textAlign: 'center'}}>
+              <a href={value}>{value}</a><br/>
+              <img src={`https://qrtag.net/api/qr_4.png?url=${value}`} alt="qr" style={{ marginTop: '1.5rem'}}/>
             </Typography>
           </Box>
         </Fade>
