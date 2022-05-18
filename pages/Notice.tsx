@@ -2,12 +2,13 @@ import React from 'react'
 import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import Footer from './components/Footer'
+import ShowModal from './components/showModal'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea, CardActions } from '@mui/material';
 
 export default function Notice() {
   const { data, error } = useSWR('../api/DB', fetcher)
@@ -44,13 +45,26 @@ export default function Notice() {
               </CardContent>
             </CardActionArea>
             <CardActions className='link-Buttion-Position'>
-              <Button size="medium" color="primary">
-                Share
-              </Button>
+              <UsedLink value={log.Link}/>
+              {/* Img 랑 Link 추가 */}
             </CardActions>
           </Card>
 
         ))}
+      </div>
+    )
+  }
+}
+function UsedLink({ value }: { value: string }){
+  if(!value){
+    return(
+        null
+    )
+  }
+  else{
+    return(
+      <div>
+        <ShowModal value={value} />
       </div>
     )
   }
