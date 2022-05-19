@@ -6,7 +6,6 @@ const Admin = () => {
   const [category, setCategory] = useState<string>('')
   const [contents, setContents] = useState<string>('')
   const [link, setLink] = useState<string>('')
-  const QueryhandleParam = setValue => e => setValue(e.target.value)
 
   let today = new Date()
   let time = today.toLocaleString()
@@ -24,7 +23,7 @@ const Admin = () => {
   const register = async() => {
     event.preventDefault()
     if (!category || !contents || !link) {
-      toast.error('공백이 있으면 등록 할 수 없습니다 !', toastMessage)
+      toast.error('모든 항목을 입력해주세요.', toastMessage)
     }
     else {
       const res = await fetch("./api/reg", {
@@ -45,10 +44,11 @@ const Admin = () => {
     <div>
       <form className='box'>
         <h1>Register</h1>
-        <input type='text' className='inputValue' placeholder='분류' onChange={QueryhandleParam(setCategory)}/><br/><br/>
-        <input type='text' className='inputValue' placeholder='내용' onChange={QueryhandleParam(setContents)}/><br/><br/>
-        <input type='text' className='inputValue' placeholder='URL' onChange={QueryhandleParam(setLink)}/><br/><br/>
-        <input type='reset' className='registerButton' value="등록" onClick={register}/>
+        <input type='text' className='inputValue' placeholder='분류' onChange={(e) => setCategory(e.target.value)}/><br/><br/>
+        <input type='text' className='inputValue' placeholder='내용' onChange={(e) => setContents(e.target.value)}/><br/><br/>
+        <input type='text' className='inputValue' placeholder='URL' onChange={(e) => setLink(e.target.value)}/><br/><br/>
+        <button className='registerButton' onClick={register}>등록</button>
+        <ToastContainer />
       </form>
     </div>
   );
